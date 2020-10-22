@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:messagingappui/signup.dart';
 import 'package:messagingappui/widgets/EmailTextForm.dart';
 import 'package:messagingappui/widgets/PasswordTextForm.dart';
 
@@ -13,6 +14,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
     home: new MyHomePage(),
+      routes: <String, WidgetBuilder>{
+      '/signup': (BuildContext context) => new SignUpPage()
+      },
       debugShowCheckedModeBanner: false,
     );
   }
@@ -151,7 +155,9 @@ class _MyHomePageState extends State<MyHomePage> {
                 width: 5.0,
               ),
               InkWell(
-                onTap: () {},
+                onTap: () {
+                  Navigator.of(context).pushNamed('/signup');
+                },
                 child: Text('Register',
                 style: TextStyle(
                   color: Colors.green,
