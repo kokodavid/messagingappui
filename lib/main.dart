@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:messagingappui/widgets/EmailTextForm.dart';
+import 'package:messagingappui/widgets/PasswordTextForm.dart';
 
 void main() {
   runApp(MyApp());
@@ -51,36 +53,11 @@ class _MyHomePageState extends State<MyHomePage> {
             padding: EdgeInsets.only(top: 35,left: 20,right: 20),
             child: Column(
               children: <Widget>[
-                TextField(
-                  decoration: InputDecoration(
-                    labelText: 'EMAIL',
-                    labelStyle: TextStyle(
-                      fontFamily: 'Montserrat',
-                      fontWeight: FontWeight.bold,
-                      color: Colors.grey
-                    ),
-                    focusedBorder: UnderlineInputBorder(
-                      borderSide: BorderSide(color: Colors.green)
-                    )
-                  ),
-                ),
+               EmailTextForm(),
                 SizedBox(
-                  height: 20.0,
+                  height: 12.0,
                 ),
-                TextField(
-                  decoration: InputDecoration(
-                      labelText: 'PASSWORD',
-                      labelStyle: TextStyle(
-                          fontFamily: 'Montserrat',
-                          fontWeight: FontWeight.bold,
-                          color: Colors.grey
-                      ),
-                      focusedBorder: UnderlineInputBorder(
-                          borderSide: BorderSide(color: Colors.green)
-                      )
-                  ),
-                  obscureText: true,
-                ),
+                PasswordTextForm(),
                 SizedBox(
                   height: 5.0,
                 ),
@@ -96,10 +73,96 @@ class _MyHomePageState extends State<MyHomePage> {
                       decoration: TextDecoration.underline
                     ),),
                   ),
-                )
+                ),
+                SizedBox(
+                  height: 40.0,),
+                Container(
+                  height: 50.0,
+                  child: Material(
+                    borderRadius: BorderRadius.circular(20.0),
+                    shadowColor: Colors.greenAccent,
+                    color: Colors.green,
+                    elevation: 7.0,
+                    child: GestureDetector(
+                      onTap: (){},
+                      child: Center(
+                        child: Text(
+                            'LOGIN',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontFamily: 'Montserrat',
+                            fontWeight: FontWeight.bold
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 20.0,
+                ),
+                Container(
+                  height: 50.0,
+                  color: Colors.transparent,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      border: Border.all(
+                        color: Colors.black,
+                        style: BorderStyle.solid
+                      ),
+                      color: Colors.transparent,
+                      borderRadius: BorderRadius.circular(20.0)
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Center(
+                          child: ImageIcon(AssetImage('assets/facebook.png')),
+                        ),
+                        SizedBox(width: 10.0,),
+                        Center(
+                          child: Text(
+                            'Log in With facebook',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontFamily: 'Montserrat'
+                            ),),
+                        )
+                      ],
+                    ),
+                  ),
+                ),
               ],
             ),
+          ),
+          SizedBox(
+            height: 15.0,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text('New to Spotify ?',
+              style: TextStyle(
+                color: Colors.green,
+                fontFamily: 'Montserrat'
+              ),
+              ),
+              SizedBox(
+                width: 5.0,
+              ),
+              InkWell(
+                onTap: () {},
+                child: Text('Register',
+                style: TextStyle(
+                  color: Colors.green,
+                  fontFamily: 'Montserrat',
+                  fontWeight: FontWeight.bold,
+                  decoration: TextDecoration.underline
+                ),),
+              )
+            ]
           )
+
         ],
       ),
     );
