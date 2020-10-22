@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:messagingappui/widgets/EmailTextForm.dart';
+import 'package:messagingappui/widgets/PasswordTextForm.dart';
 
 void main() {
   runApp(MyApp());
@@ -51,36 +53,11 @@ class _MyHomePageState extends State<MyHomePage> {
             padding: EdgeInsets.only(top: 35,left: 20,right: 20),
             child: Column(
               children: <Widget>[
-                TextField(
-                  decoration: InputDecoration(
-                    labelText: 'EMAIL',
-                    labelStyle: TextStyle(
-                      fontFamily: 'Montserrat',
-                      fontWeight: FontWeight.bold,
-                      color: Colors.grey
-                    ),
-                    focusedBorder: UnderlineInputBorder(
-                      borderSide: BorderSide(color: Colors.green)
-                    )
-                  ),
-                ),
+               EmailTextForm(),
                 SizedBox(
                   height: 12.0,
                 ),
-                TextField(
-                  decoration: InputDecoration(
-                      labelText: 'PASSWORD',
-                      labelStyle: TextStyle(
-                          fontFamily: 'Montserrat',
-                          fontWeight: FontWeight.bold,
-                          color: Colors.grey
-                      ),
-                      focusedBorder: UnderlineInputBorder(
-                          borderSide: BorderSide(color: Colors.green)
-                      )
-                  ),
-                  obscureText: true,
-                ),
+                PasswordTextForm(),
                 SizedBox(
                   height: 5.0,
                 ),
