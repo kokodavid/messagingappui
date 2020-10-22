@@ -65,7 +65,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ),
                 SizedBox(
-                  height: 20.0,
+                  height: 12.0,
                 ),
                 TextField(
                   decoration: InputDecoration(
@@ -96,7 +96,65 @@ class _MyHomePageState extends State<MyHomePage> {
                       decoration: TextDecoration.underline
                     ),),
                   ),
-                )
+                ),
+                SizedBox(
+                  height: 40.0,),
+                Container(
+                  height: 50.0,
+                  child: Material(
+                    borderRadius: BorderRadius.circular(20.0),
+                    shadowColor: Colors.greenAccent,
+                    color: Colors.green,
+                    elevation: 7.0,
+                    child: GestureDetector(
+                      onTap: (){},
+                      child: Center(
+                        child: Text(
+                            'LOGIN',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontFamily: 'Montserrat',
+                            fontWeight: FontWeight.bold
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 20.0,
+                ),
+                Container(
+                  height: 50.0,
+                  color: Colors.transparent,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      border: Border.all(
+                        color: Colors.black,
+                        style: BorderStyle.solid
+                      ),
+                      color: Colors.transparent,
+                      borderRadius: BorderRadius.circular(20.0)
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Center(
+                          child: ImageIcon(AssetImage('assets/facebook.png')),
+                        ),
+                        SizedBox(width: 10.0,),
+                        Center(
+                          child: Text(
+                            'Log in With facebook',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontFamily: 'Montserrat'
+                            ),),
+                        )
+                      ],
+                    ),
+                  ),
+                ),
               ],
             ),
           )
